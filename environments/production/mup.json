@@ -4,7 +4,7 @@
     { 
       "host": "159.203.69.0", 
       "username": "root", 
-      "password": "password"
+      "pem": "~/.ssh/id_4a78d10fd483ffbe2cd0e3aeb74a888b"
     } 
   ], 
   // Set to False if using Compose.io 
