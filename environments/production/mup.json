@@ -2,9 +2,9 @@
   // Server authentication info 
   "servers": [ 
     { 
-      "host": "45.55.154.246", 
+      "host": "159.203.69.0", 
       "username": "root", 
-      "pem": "~.ssh/id_rsa"
+      "Password": "8837834dd3840541"
     } 
   ], 
   // Set to False if using Compose.io 
@@ -22,7 +22,7 @@
   // Configure environment 
   "env": { 
     "PORT": 80, 
-    "ROOT_URL": "http://45.55.154.246", 
+    "ROOT_URL": "http://159.203.69.0", 
     "NODE_ENV": "production" ,
      
     // These values are set through string replacement for security 
