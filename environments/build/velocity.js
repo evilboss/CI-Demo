@@ -26,11 +26,11 @@ else {
 
 console.log('Starting Meteor');
 var meteorProcess = spawn(
-  'meteor', args, {
-    cwd: process.cwd(),
-    stdio: 'pipe',
-    env: process.env
-  }
+    'meteor', args, {
+      cwd: process.cwd(),
+      stdio: 'pipe',
+      env: process.env
+    }
 );
 
 meteorProcess.stderr.pipe(process.stderr);
@@ -40,7 +40,7 @@ meteorProcess.stdout.on('data', function (data) {
 
   // ignore this line
   if (line.indexOf('stream error Network error: ws://') !== -1 &&
-    line.indexOf('/websocket: connect ECONNREFUSED') !== -1) {
+      line.indexOf('/websocket: connect ECONNREFUSED') !== -1) {
     return;
   }
 
