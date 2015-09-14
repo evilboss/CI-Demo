@@ -4,7 +4,7 @@
     { 
       "host": "159.203.69.0", 
       "username": "root", 
-      "Password": "8837834dd3840541"
+      "password": "8837834dd3840541"
     } 
   ], 
   // Set to False if using Compose.io 
