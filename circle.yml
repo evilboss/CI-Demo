@@ -44,7 +44,7 @@ dependencies:
     - node ../environments/build/velocity.js:
         pwd: app
         environment:
-          INSTALL_DEPENDENCIES: false
+          INSTALL_DEPENDENCIES: true
 
     # -- CACHE CUCUMBER NPM MODULES --
     # Install package dependencies for Cucumber support files
