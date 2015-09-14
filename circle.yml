@@ -41,7 +41,7 @@ dependencies:
 
     # -- CACHE CUCUMBER NPM MODULES --
     # Install Meteor related dependencies
-    - node ../environments/build/velocity.js:
+    #- node ../environments/build/velocity.js:
         pwd: app
         environment:
           INSTALL_DEPENDENCIES: true
