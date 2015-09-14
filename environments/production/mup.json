@@ -16,7 +16,7 @@
   // Install PhantomJS in the server 
   "setupPhantom": true, 
   // Application name (No spaces) 
-  "appName": "CIDemo", 
+  "appName": "CI-Demo", 
   // Location of app (local directory) 
   "app": "../../app", 
   // Configure environment 
