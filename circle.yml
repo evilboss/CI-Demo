@@ -1,8 +1,7 @@
 machine:
+
   java:
     version: oraclejdk8
-  node:
-    version: 0.10.38
 
   environment:
     # Enable this to debug builds
@@ -42,14 +41,10 @@ dependencies:
 
     # -- CACHE CUCUMBER NPM MODULES --
     # Install Meteor related dependencies
-    #- node ../environments/build/velocity.js:
-     #   pwd: app
-    #    environment:
-    #      INSTALL_DEPENDENCIES: true
-
-    # -- UPDATE NPM -- this is from live letterpress circle.yml - however velocity_meteor-tool release seems to be 1.1.3...?
-    # - cd $HOME/.meteor/packages/meteor-tool/1.1.4/mt-*/dev_bundle/lib && ../bin/npm install npm
-    # - cd $HOME/.meteor/packages/velocity_meteor-tool/1.1.4_2/mt-*/dev_bundle/lib && ../bin/npm install npm
+    - node ../environments/build/velocity.js:
+        pwd: app
+        environment:
+          INSTALL_DEPENDENCIES: true
 
     # -- CACHE CUCUMBER NPM MODULES --
     # Install package dependencies for Cucumber support files
@@ -67,28 +62,26 @@ test:
     # - velocity test-package <package name> --ci
 
     # Test the app with Chrome and ensure all artifacts can be traced back to the chrome run
-#TODO REENABLE Chrome tests once velocity is working
-#    - node ../environments/build/velocity.js:
-#        pwd: app
-#        environment:
-#          CUCUMBER_SCREENSHOTS_DIR: "$CIRCLE_ARTIFACTS/screenshots/chrome"
-#          CUCUMBER_JSON_OUTPUT: "$CIRCLE_TEST_REPORTS/chrome.cucumber"
-#          SELENIUM_BROWSER: chrome
-#    - mkdir -p $CIRCLE_ARTIFACTS/chrome
-#    - cp app/.meteor/local/log/*.log $CIRCLE_ARTIFACTS/chrome
+    - node ../environments/build/velocity.js:
+        pwd: app
+        environment:
+          CUCUMBER_SCREENSHOTS_DIR: "$CIRCLE_ARTIFACTS/screenshots/chrome"
+          CUCUMBER_JSON_OUTPUT: "$CIRCLE_TEST_REPORTS/chrome.cucumber"
+          SELENIUM_BROWSER: chrome
+    - mkdir -p $CIRCLE_ARTIFACTS/chrome
+    - cp app/.meteor/local/log/*.log $CIRCLE_ARTIFACTS/chrome
 
     # Test the app with Firefox and ensure all artifacts can be traced back to the firefox run
-#TODO REENABLE Firefox tests once build is working
-#    - node ../environments/build/velocity.js:
-#        pwd: app
-#        environment:
-#          # no need to run server integration tests again since browser choice has no impact
-#          JASMINE_SERVER_INTEGRATION: 0
-#          CUCUMBER_SCREENSHOTS_DIR: "$CIRCLE_ARTIFACTS/screenshots/firefox"
-#          CUCUMBER_JSON_OUTPUT: "$CIRCLE_TEST_REPORTS/firefox.cucumber"
-#          SELENIUM_BROWSER: firefox
-#    - mkdir -p $CIRCLE_ARTIFACTS/firefox
-#    - cp app/.meteor/local/log/*.log $CIRCLE_ARTIFACTS/firefox
+    - node ../environments/build/velocity.js:
+        pwd: app
+        environment:
+          # no need to run server integration tests again since browser choice has no impact
+          JASMINE_SERVER_INTEGRATION: 0
+          CUCUMBER_SCREENSHOTS_DIR: "$CIRCLE_ARTIFACTS/screenshots/firefox"
+          CUCUMBER_JSON_OUTPUT: "$CIRCLE_TEST_REPORTS/firefox.cucumber"
+          SELENIUM_BROWSER: firefox
+    - mkdir -p $CIRCLE_ARTIFACTS/firefox
+    - cp app/.meteor/local/log/*.log $CIRCLE_ARTIFACTS/firefox
 
 deployment:
 
