@@ -20,7 +20,6 @@ Feature: One-liner description of this feature
   Scenario: This scenario will run on both dev and CI
     When I navigate to "/"
     Then I should see the title "app"
-
   # This scenario will not run as part of the Meteor dev cycle because it does not have the @dev tag
   # But it will run on CI if you use `meteor --test` for instance
 
